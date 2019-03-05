@@ -55,11 +55,12 @@ public class rowThread extends Thread
     {
         int indexRow = 0;
         int indexColumn = 0;
-        int n = 3;
-        int m = 3;
         int saddlePoint=0;
         boolean hasSaddlePoint = false;
 
+        /*
+        int n = 4;
+        int m = 4;
         int[][] matrix = new int[n][m];
 
         for (int i=0; i<matrix.length; i++)
@@ -69,10 +70,14 @@ public class rowThread extends Thread
                 matrix[i][j] = (int) (Math.random()*10);
             }
         }
+        */
 
-        /*int[][]matrix=new int[][] {	{4,3,2},
-                                    {7,8,9},
-                                    {6,2,1}}; */
+        int [][] matrix = new int [][]  {   {3,7,2,3,2},
+                                            {3,2,9,2,2},
+                                            {6,5,6,4,8},
+                                            {5,2,2,3,2}
+                                        };
+
 
         rowThread threadRows [] = new rowThread[matrix.length];
         columnThread threadColumnThreads[] = new columnThread[matrix[0].length];
@@ -86,10 +91,10 @@ public class rowThread extends Thread
             threadRows[i] = new rowThread(array);
         }
 
-        for(int i = 0; i < matrix.length; i++)
+        for(int i = 0; i < matrix[0].length; i++)
         {
-            int [] array = new int[matrix[0].length];
-            for (int j = 0; j < matrix[0].length; j++)
+            int [] array = new int[matrix.length];
+            for (int j = 0; j < matrix.length; j++)
             {
                 array[j] = matrix[j][i];
             }
