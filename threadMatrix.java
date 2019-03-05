@@ -27,27 +27,25 @@ public class threadMatrix extends Thread {
     public static void main(String[] args) throws InterruptedException {
 
 
-        /*int [][] matrixOne = {
-                {3,7,6,6,6,3,3},
-                {3,7,6,6,6,3,3},
-                {3,7,6,6,6,3,3}
+        int [][] matrixOne = {
+                {3,7},
+                {3,2},
+                {6,5},
+                {4,8}
 
         };
         int [][] matrixTwo = {
-                {3,7,2,5},
-                {3,2,9,9},
-                {3,2,9,3},
-                {3,7,2,7},
-                {3,2,9,3},
-                {3,7,2,7},
-                {3,7,2,7}
-
+                {3,7,2},
+                {3,2,9}
         };
 
         int n = matrixOne.length;
         int m = matrixOne[0].length;
-        int k = matrixTwo[0].length; */
+        int k = matrixTwo[0].length;
 
+        int [][] matrixThree = new int [n][k];
+
+        /*
         int [][] matrixOne, matrixTwo, matrixThree;
 
         int n = 30;
@@ -68,13 +66,14 @@ public class threadMatrix extends Thread {
                 matrixTwo[i][j] = (int)(Math.random()*5);
             }
         }
+        */
 
         Thread [][] threads = new Thread[n][k];
 
         System.out.println("Matrix A\n");
-        for (int i = 0; i < m; i++)
+        for (int i = 0; i < n; i++)
         {
-            for(int j = 0; j < n; j++)
+            for(int j = 0; j < m; j++)
             {
                 System.out.print(matrixOne[i][j] + "\t");
             }
@@ -84,7 +83,7 @@ public class threadMatrix extends Thread {
 
 
         System.out.println("Matrix B\n");
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < m; i++)
         {
             for(int j = 0; j < k; j++)
             {
@@ -95,7 +94,7 @@ public class threadMatrix extends Thread {
         System.out.println("\n\n");
 
 
-        for (int i = 0; i < m; i++)
+        for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < k; j++)
             {
@@ -105,7 +104,7 @@ public class threadMatrix extends Thread {
         }
 
 
-        for (int i = 0; i < m; i++)
+        for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < k; j++)
             {
@@ -115,7 +114,7 @@ public class threadMatrix extends Thread {
 
 
         System.out.println("Matrix C\n");
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < n; i++) {
             for (int j = 0; j < k; j++) {
                 System.out.print(matrixThree[i][j] + "\t\t");
             }
